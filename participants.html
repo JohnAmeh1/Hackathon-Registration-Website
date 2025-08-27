@@ -1,0 +1,348 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Participants Registration - Applex Hackathon 2024</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/participants.css">
+</head>
+<body class="min-h-screen bg-animate">
+
+  <!-- Particles Background -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Navigation -->
+  <nav class="bg-white/90 backdrop-blur-md shadow-lg fixed w-full top-0 z-50 border-b border-gray-200">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold gradient-text flex items-center">
+        <i class="fas fa-code mr-2"></i>
+        <a href="index.html">Applex</a>
+      </div>
+      <div class="flex items-center space-x-6">
+        <a href="index.html" class="text-gray-700 hover:text-purple-600 transition-colors font-medium">
+          <i class="fas fa-arrow-left mr-2"></i>Back to Home
+        </a>
+        <div class="text-sm text-gray-500">
+          <i class="fas fa-users mr-1"></i>
+          Participants Registration
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="pt-24 pb-12 min-h-screen flex items-center justify-center px-4">
+    <div class="max-w-4xl w-full">
+      
+      <!-- Header Section -->
+      <div class="text-center mb-12">
+        <div class="floating">
+          <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+            <i class="fas fa-users mr-3"></i>
+            Join the Revolution
+          </h1>
+        </div>
+        <p class="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
+          Form your dream team of 5 innovators and secure your spot in the most exciting hackathon of 2024
+        </p>
+      </div>
+
+      <!-- Registration Form Card -->
+      <div class="form-card p-8 md:p-12 relative overflow-hidden">
+        
+        <!-- Progress Bar -->
+        <div class="mb-8">
+          <div class="flex justify-between text-sm text-gray-600 mb-2">
+            <span>Registration Progress</span>
+            <span id="progress-text">0% Complete</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+        </div>
+
+        <!-- Form Header -->
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-bold gradient-text mb-4">Participant Registration</h2>
+          <p class="text-gray-600 text-lg">
+            Build your team of 5 brilliant minds and get ready to change the world
+          </p>
+        </div>
+
+        <!-- Registration Form -->
+        <form id="participantForm" class="space-y-6">
+          
+          <!-- Team Information Section -->
+          <div class="bg-gradient-to-r from-purple-50 to-blue-50 p-6 rounded-2xl border border-purple-100">
+            <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+              <i class="fas fa-flag mr-3 text-purple-600"></i>
+              Team Information
+            </h3>
+            
+            <div class="form-group">
+              <input 
+                type="text" 
+                name="teamName"
+                placeholder="Enter your team name (e.g., Code Warriors)"
+                class="form-input"
+                required
+                maxlength="50"
+              >
+              <i class="fas fa-flag form-icon"></i>
+            </div>
+
+            <div class="form-group">
+              <textarea 
+                name="teamDescription"
+                placeholder="Brief description of your team's vision and goals (optional)"
+                class="form-input resize-none"
+                rows="3"
+                maxlength="200"
+              ></textarea>
+              <i class="fas fa-lightbulb form-icon"></i>
+            </div>
+          </div>
+
+          <!-- Team Members Section -->
+          <div class="bg-gradient-to-r from-green-50 to-teal-50 p-6 rounded-2xl border border-green-100">
+            <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+              <i class="fas fa-users mr-3 text-green-600"></i>
+              Team Members (5 Required)
+            </h3>
+            
+            <div class="grid md:grid-cols-2 gap-4">
+              <!-- Team Leader -->
+              <div class="md:col-span-2">
+                <div class="form-group">
+                  <input 
+                    type="text" 
+                    name="member1"
+                    placeholder="Team Leader - Full Name"
+                    class="form-input"
+                    required
+                    maxlength="50"
+                  >
+                  <i class="fas fa-crown form-icon text-yellow-500"></i>
+                </div>
+                <div class="form-group">
+                  <input 
+                    type="email" 
+                    name="leader-email"
+                    placeholder="Team Leader - Email Address"
+                    class="form-input"
+                    required
+                  >
+                  <i class="fas fa-envelope form-icon"></i>
+                </div>
+                <div class="form-group">
+                  <input 
+                    type="tel" 
+                    name="leader-phone"
+                    placeholder="Team Leader - Phone Number"
+                    class="form-input"
+                    required
+                  >
+                  <i class="fas fa-phone form-icon"></i>
+                </div>
+              </div>
+
+              <!-- Other Members -->
+              <div class="form-group">
+                <input 
+                  type="text" 
+                  name="member2"
+                  placeholder="Member 2 - Full Name"
+                  class="form-input"
+                  required
+                  maxlength="50"
+                >
+                <i class="fas fa-user form-icon"></i>
+              </div>
+
+              <div class="form-group">
+                <input 
+                  type="email" 
+                  name="member2-email"
+                  placeholder="Member 2 - Email Address"
+                  class="form-input"
+                  required
+                >
+                <i class="fas fa-envelope form-icon"></i>
+              </div>
+
+              <div class="form-group">
+                <input 
+                  type="text" 
+                  name="member3"
+                  placeholder="Member 3 - Full Name"
+                  class="form-input"
+                  required
+                  maxlength="50"
+                >
+                <i class="fas fa-user form-icon"></i>
+              </div>
+
+              <div class="form-group">
+                <input 
+                  type="email" 
+                  name="member3-email"
+                  placeholder="Member 3 - Email Address"
+                  class="form-input"
+                  required
+                >
+                <i class="fas fa-envelope form-icon"></i>
+              </div>
+
+              <div class="form-group">
+                <input 
+                  type="text" 
+                  name="member4"
+                  placeholder="Member 4 - Full Name"
+                  class="form-input"
+                  required
+                  maxlength="50"
+                >
+                <i class="fas fa-user form-icon"></i>
+              </div>
+
+              <div class="form-group">
+                <input 
+                  type="email" 
+                  name="member4-email"
+                  placeholder="Member 4 - Email Address"
+                  class="form-input"
+                  required
+                >
+                <i class="fas fa-envelope form-icon"></i>
+              </div>
+
+              <div class="form-group">
+                <input 
+                  type="text" 
+                  name="member5"
+                  placeholder="Member 5 - Full Name"
+                  class="form-input"
+                  required
+                  maxlength="50"
+                >
+                <i class="fas fa-user form-icon"></i>
+              </div>
+
+              <div class="form-group">
+                <input 
+                  type="email" 
+                  name="member5-email"
+                  placeholder="Member 5 - Email Address"
+                  class="form-input"
+                  required
+                >
+                <i class="fas fa-envelope form-icon"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Terms and Conditions -->
+          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200">
+            <label class="flex items-start space-x-3 cursor-pointer">
+              <input type="checkbox" name="terms" class="mt-1 w-5 h-5 text-purple-600 rounded" required>
+              <div class="text-sm text-gray-700">
+                <span class="font-medium">I agree to the </span>
+                <a href="#" class="text-purple-600 hover:underline font-medium">Terms and Conditions</a>
+                <span class="font-medium"> and </span>
+                <a href="#" class="text-purple-600 hover:underline font-medium">Privacy Policy</a>
+                <span class="font-medium">. I understand that:</span>
+                <ul class="mt-2 space-y-1 text-gray-600">
+                  <li>• Registration fee is non-refundable</li>
+                  <li>• All team members must be present during the event</li>
+                  <li>• Code of conduct must be followed at all times</li>
+                </ul>
+              </div>
+            </label>
+          </div>
+
+          <!-- Registration Fee Info -->
+          <div class="bg-gradient-to-r from-green-100 to-emerald-100 p-6 rounded-2xl border border-green-200">
+            <div class="flex items-center justify-between">
+              <div>
+                <h4 class="text-xl font-bold text-gray-800 mb-2">Registration Fee</h4>
+                <p class="text-gray-600">Includes meals, accommodation, swag, and access to all workshops</p>
+              </div>
+              <div class="text-right">
+                <div class="text-3xl font-bold text-green-600">NGN 10,000</div>
+                <div class="text-sm text-gray-500">per team</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="text-center pt-6">
+            <button type="submit" class="btn-primary text-lg px-12 py-4 flex items-center justify-center mx-auto min-w-64" id="submitBtn">
+              <i class="fas fa-credit-card mr-3"></i>
+              <span id="button-text">Proceed to Payment</span>
+              <div class="loading-spinner ml-3 hidden" id="loading-spinner"></div>
+            </button>
+            
+            <p class="text-sm text-gray-500 mt-4">
+              <i class="fas fa-lock mr-1"></i>
+              Secure payment powered by Stripe • 256-bit SSL encryption
+            </p>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- Features Section -->
+      <div class="grid md:grid-cols-3 gap-6 mt-12">
+        <div class="text-center text-white">
+          <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
+            <i class="fas fa-shield-alt text-2xl"></i>
+          </div>
+          <h3 class="font-bold text-lg mb-2">Secure Registration</h3>
+          <p class="text-white/80 text-sm">Your data is protected with enterprise-grade security</p>
+        </div>
+        
+        <div class="text-center text-white">
+          <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
+            <i class="fas fa-clock text-2xl"></i>
+          </div>
+          <h3 class="font-bold text-lg mb-2">Instant Confirmation</h3>
+          <p class="text-white/80 text-sm">Get immediate confirmation after successful payment</p>
+        </div>
+        
+        <div class="text-center text-white">
+          <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
+            <i class="fas fa-headset text-2xl"></i>
+          </div>
+          <h3 class="font-bold text-lg mb-2">24/7 Support</h3>
+          <p class="text-white/80 text-sm">Our team is here to help you every step of the way</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Success Modal -->
+  <div id="success-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center z-50">
+    <div class="bg-white p-8 rounded-3xl shadow-2xl max-w-md mx-4 text-center">
+      <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+        <svg class="w-12 h-12 text-green-500 checkmark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+        </svg>
+      </div>
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">Registration Successful!</h3>
+      <p class="text-gray-600 mb-6">Your team has been successfully registered. Check your email for confirmation details.</p>
+      <button onclick="closeModal()" class="btn-primary px-8 py-3">
+        <i class="fas fa-check mr-2"></i>
+        Continue
+      </button>
+    </div>
+  </div>
+
+  <script src="./assets/js/participants.js"></script>
+
+</body>
+</html>
