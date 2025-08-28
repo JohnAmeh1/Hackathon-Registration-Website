@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Idea Pitch Registration - Applex Hackathon 2024</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/pitch.css">
+
+</head>
+<body class="min-h-screen bg-animate">
+
+  <!-- Navigation -->
+  <nav class="bg-white/90 backdrop-blur-md shadow-lg fixed w-full top-0 z-50 border-b border-gray-200">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold gradient-text flex items-center">
+        <i class="fas fa-code mr-2"></i>
+        <a href="index.html">Applex</a>
+      </div>
+      <div class="flex items-center space-x-6">
+        <a href="index.html" class="text-gray-700 hover:text-purple-600 transition-colors font-medium">
+          <i class="fas fa-arrow-left mr-2"></i>Back to Home
+        </a>
+        <div class="text-sm text-gray-500">
+          <i class="fas fa-lightbulb mr-1"></i>
+          Idea Pitch Registration
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="pt-24 pb-12 min-h-screen flex items-center justify-center px-4">
+    <div class="max-w-4xl w-full">
+      
+      <!-- Header Section -->
+      <div class="text-center mb-12">
+        <div class="floating">
+          <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+            <i class="fas fa-lightbulb mr-3"></i>
+            Pitch Your Vision
+          </h1>
+        </div>
+        <p class="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
+          Share your groundbreaking idea with investors, receive expert feedback, and find collaborators
+        </p>
+      </div>
+
+      <!-- Registration Form Card -->
+      <div class="form-card p-8 md:p-12 relative overflow-hidden">
+        
+        <!-- Progress Bar -->
+        <div class="mb-8">
+          <div class="flex justify-between text-sm text-gray-600 mb-2">
+            <span>Registration Progress</span>
+            <span id="progress-text">0% Complete</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+        </div>
+
+        <!-- Form Header -->
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-bold gradient-text mb-4">Idea Pitch Registration</h2>
+          <p class="text-gray-600 text-lg">
+            Secure your 5-minute pitch slot and connect with potential investors
+          </p>
+        </div>
+
+        <!-- Registration Form -->
+        <form id="pitchForm" class="space-y-6">
+          
+          <!-- Personal Information Section -->
+          <div class="bg-gradient-to-r from-purple-50 to-blue-50 p-6 rounded-2xl border border-purple-100">
+            <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+              <i class="fas fa-user mr-3 text-purple-600"></i>
+              Personal Information
+            </h3>
+            
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="form-group">
+                <input 
+                  type="text" 
+                  name="firstName"
+                  placeholder="First Name"
+                  class="form-input"
+                  required
+                  maxlength="30"
+                >
+                <i class="fas fa-user form-icon"></i>
+              </div>
+
+              <div class="form-group">
+                <input 
+                  type="text" 
+                  name="lastName"
+                  placeholder="Last Name"
+                  class="form-input"
+                  required
+                  maxlength="30"
+                >
+                <i class="fas fa-user form-icon"></i>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <input 
+                type="email" 
+                name="email"
+                placeholder="Email Address"
+                class="form-input"
+                required
+              >
+              <i class="fas fa-envelope form-icon"></i>
+            </div>
+
+            <div class="form-group">
+              <input 
+                type="tel" 
+                name="phone"
+                placeholder="Phone Number"
+                class="form-input"
+                required
+              >
+              <i class="fas fa-phone form-icon"></i>
+            </div>
+
+            <div class="form-group">
+              <input 
+                type="text" 
+                name="occupation"
+                placeholder="Current Occupation/Role"
+                class="form-input"
+                required
+                maxlength="50"
+              >
+              <i class="fas fa-briefcase form-icon"></i>
+            </div>
+          </div>
+
+          <!-- Idea Information Section -->
+          <div class="bg-gradient-to-r from-green-50 to-teal-50 p-6 rounded-2xl border border-green-100">
+            <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+              <i class="fas fa-lightbulb mr-3 text-green-600"></i>
+              Your Idea
+            </h3>
+            
+            <div class="form-group">
+              <input 
+                type="text" 
+                name="ideaName"
+                placeholder="Idea/Project Name"
+                class="form-input"
+                required
+                maxlength="60"
+              >
+              <i class="fas fa-tag form-icon"></i>
+            </div>
+
+            <div class="form-group">
+              <select name="category" class="form-input" required>
+                <option value="" disabled selected>Select Category</option>
+                <option value="tech">Technology & Software</option>
+                <option value="health">Healthcare & Biotech</option>
+                <option value="finance">Fintech & Blockchain</option>
+                <option value="education">Education & EdTech</option>
+                <option value="sustainability">Sustainability & CleanTech</option>
+                <option value="consumer">Consumer Products</option>
+                <option value="other">Other</option>
+              </select>
+              <i class="fas fa-folder form-icon"></i>
+            </div>
+
+            <div class="form-group">
+              <textarea 
+                name="ideaDescription"
+                placeholder="Describe your idea in 2-3 sentences (elevator pitch)"
+                class="form-input resize-none"
+                rows="2"
+                required
+                maxlength="200"
+              ></textarea>
+              <i class="fas fa-align-left form-icon"></i>
+            </div>
+
+            <div class="form-group">
+              <textarea 
+                name="problemSolution"
+                placeholder="What problem does it solve and how?"
+                class="form-input resize-none"
+                rows="3"
+                required
+                maxlength="300"
+              ></textarea>
+              <i class="fas fa-question-circle form-icon"></i>
+            </div>
+
+            <div class="form-group">
+              <textarea 
+                name="targetMarket"
+                placeholder="Target market/customers"
+                class="form-input resize-none"
+                rows="2"
+                required
+                maxlength="150"
+              ></textarea>
+              <i class="fas fa-users form-icon"></i>
+            </div>
+
+            <div class="form-group">
+              <select name="developmentStage" class="form-input" required>
+                <option value="" disabled selected>Development Stage</option>
+                <option value="idea">Just an Idea</option>
+                <option value="prototype">Prototype/Proof of Concept</option>
+                <option value="mvp">Minimum Viable Product (MVP)</option>
+                <option value="launched">Launched with Early Users</option>
+                <option value="revenue">Generating Revenue</option>
+              </select>
+              <i class="fas fa-chart-line form-icon"></i>
+            </div>
+          </div>
+
+          <!-- Pitch Preferences -->
+          <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-2xl border border-indigo-100">
+            <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+              <i class="fas fa-microphone mr-3 text-indigo-600"></i>
+              Pitch Preferences
+            </h3>
+            
+            <div class="form-group">
+              <select name="pitchFormat" class="form-input" required>
+                <option value="" disabled selected>Preferred Pitch Format</option>
+                <option value="solo">Solo Presentation</option>
+                <option value="team">Team Presentation (2-3 people)</option>
+              </select>
+              <i class="fas fa-presentation form-icon"></i>
+            </div>
+
+            <div class="form-group">
+              <select name="investorInterest" class="form-input" required>
+                <option value="" disabled selected>Primary Interest in Pitching</option>
+                <option value="funding">Seeking Funding</option>
+                <option value="feedback">Looking for Feedback</option>
+                <option value="partnership">Partnership Opportunities</option>
+                <option value="exposure">Gaining Exposure</option>
+                <option value="team">Recruiting Team Members</option>
+              </select>
+              <i class="fas fa-handshake form-icon"></i>
+            </div>
+
+            <div class="form-group">
+              <input 
+                type="text" 
+                name="fundingAmount"
+                placeholder="Funding amount sought (if applicable)"
+                class="form-input"
+                maxlength="20"
+              >
+              <i class="fas fa-money-bill-wave form-icon"></i>
+            </div>
+          </div>
+
+          <!-- Terms and Conditions -->
+          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200">
+            <label class="flex items-start space-x-3 cursor-pointer">
+              <input type="checkbox" name="terms" class="mt-1 w-5 h-5 text-purple-600 rounded" required>
+              <div class="text-sm text-gray-700">
+                <span class="font-medium">I agree to the </span>
+                <a href="#" class="text-purple-600 hover:underline font-medium">Terms and Conditions</a>
+                <span class="font-medium"> and </span>
+                <a href="#" class="text-purple-600 hover:underline font-medium">Privacy Policy</a>
+                <span class="font-medium">. I understand that:</span>
+                <ul class="mt-2 space-y-1 text-gray-600">
+                  <li>• Pitch slots are limited and subject to approval</li>
+                  <li>• I must be available during the scheduled pitch sessions</li>
+                  <li>• All information provided must be accurate and original</li>
+                  <li>• I retain all intellectual property rights to my idea</li>
+                </ul>
+              </div>
+            </label>
+          </div>
+
+          <!-- Registration Fee Info -->
+          <div class="bg-gradient-to-r from-yellow-100 to-amber-100 p-6 rounded-2xl border border-yellow-200">
+            <div class="flex items-center justify-between">
+              <div>
+                <h4 class="text-xl font-bold text-gray-800 mb-2">Pitch Slot Fee</h4>
+                <p class="text-gray-600">Includes 5-minute pitch slot, feedback session, and event access</p>
+              </div>
+              <div class="text-right">
+                <div class="text-3xl font-bold text-amber-600">NGN 5,000</div>
+                <div class="text-sm text-gray-500">per idea</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="text-center pt-6">
+            <button type="submit" class="btn-primary text-lg px-12 py-4 flex items-center justify-center mx-auto min-w-64" id="submitBtn">
+              <i class="fas fa-microphone mr-3"></i>
+              <span id="button-text">Reserve Pitch Slot</span>
+              <div class="loading-spinner ml-3 hidden" id="loading-spinner"></div>
+            </button>
+            
+            <p class="text-sm text-gray-500 mt-4">
+              <i class="fas fa-lock mr-1"></i>
+              Secure payment powered by Stripe • 256-bit SSL encryption
+            </p>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- Features Section -->
+      <div class="grid md:grid-cols-3 gap-6 mt-12">
+        <div class="text-center text-white">
+          <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
+            <i class="fas fa-handshake text-2xl"></i>
+          </div>
+          <h3 class="font-bold text-lg mb-2">Investor Access</h3>
+          <p class="text-white/80 text-sm">Connect directly with venture capitalists and angel investors</p>
+        </div>
+        
+        <div class="text-center text-white">
+          <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
+            <i class="fas fa-comments text-2xl"></i>
+          </div>
+          <h3 class="font-bold text-lg mb-2">Expert Feedback</h3>
+          <p class="text-white/80 text-sm">Receive valuable insights from industry experts</p>
+        </div>
+        
+        <div class="text-center text-white">
+          <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
+            <i class="fas fa-network-wired text-2xl"></i>
+          </div>
+          <h3 class="font-bold text-lg mb-2">Networking</h3>
+          <p class="text-white/80 text-sm">Build connections with potential partners and team members</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Success Modal -->
+  <div id="success-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
+    <div class="bg-white p-8 rounded-3xl shadow-2xl max-w-md w-full text-center">
+      <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+        <svg class="w-12 h-12 text-green-500 checkmark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+        </svg>
+      </div>
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">Pitch Slot Reserved!</h3>
+      <p class="text-gray-600 mb-6">Your idea pitch registration was successful. We'll contact you within 48 hours to schedule your pitch time.</p>
+      <button onclick="closeModal()" class="btn-primary px-8 py-3">
+        <i class="fas fa-check mr-2"></i>
+        Continue
+      </button>
+    </div>
+  </div>
+
+ <script src="./assets/js/pitch.js"></script>
+
+</body>
+</html>
